@@ -1,0 +1,32 @@
+apply plugin: 'war'
+
+version '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'geoservice',
+                   'Implementation-Version': version
+    }
+}
+
+
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+webAppDirName = 'WebContent'
+
+dependencies {
+    compile 'javax.annotation:javax.annotation-api:1.2'
+    compile 'org.javassist:javassist:3.15.0-GA'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.4.0'
+    compile 'com.squareup.okio:okio:1.6.0'
+    compile 'org.glassfish.jersey.containers:jersey-container-servlet:2.22'
+    compile 'redis.clients:jedis:2.7.3'
+    compile 'org.apache.commons:commons-lang3:3.0'
+}
