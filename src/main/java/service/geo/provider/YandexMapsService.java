@@ -243,7 +243,7 @@ public class YandexMapsService implements GeoProvider {
 			if (r == null)
 				throw new GeoProviderException("Outer geoservice troubles");
 
-			List<GeoRoute> response = r.getGeoRoutes(lngOrigin, latOrigin, lngDest, latDest);
+			List<GeoRoute> response = r.getGeoRoutes(latOrigin, lngOrigin, latDest,  lngDest);
 
 			if (_cache != null)
 				_cache.cache(cacheKey,
