@@ -14,6 +14,7 @@ import javax.ws.rs.core.MediaType;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import service.Conf;
 import service.geo.api.SuggestionRequestBody;
 import service.geo.cache.CachingProvider;
 import service.geo.cache.Redis;
@@ -38,10 +39,12 @@ public class Server {
 
 	public Server() {
 		CachingProvider _cache = null;
-		try {
-			_cache = new Redis();
-		} catch (Exception e) {
-			System.out.println("Cant connect to redis");
+		if (Conf.WITH_CACHE) {
+			try {
+				_cache = new Redis();
+			} catch (Exception e) {
+				System.out.println("Cant connect to redis");
+			}
 		}
 		_suggestion = new DaDataService(_cache);
 		_geoDadata = new DaDataService(_cache);
