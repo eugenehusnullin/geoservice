@@ -98,17 +98,22 @@ public class Server {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public String reverseGeo(
 			@QueryParam("name") String name) {
-		List<GeoObject> dadataObjects = _geoDadata.getObjects(name);
+//		List<GeoObject> dadataObjects = _geoDadata.getObjects(name);
+//		List<GeoObject> yandexObjects = null;
+//
+//		if (Utils.geocoderResponseQuality(dadataObjects) > 2)
+//			yandexObjects = _geoYandex.getObjects(name);
+//
+//		if (yandexObjects == null
+//				|| Utils.geocoderResponseQuality(dadataObjects) < Utils.geocoderResponseQuality(yandexObjects))
+//			return gson.toJson(dadataObjects);
+//		else
+//			return gson.toJson(yandexObjects);
+		
+		
 		List<GeoObject> yandexObjects = null;
-
-		if (Utils.geocoderResponseQuality(dadataObjects) > 2)
-			yandexObjects = _geoYandex.getObjects(name);
-
-		if (yandexObjects == null
-				|| Utils.geocoderResponseQuality(dadataObjects) < Utils.geocoderResponseQuality(yandexObjects))
-			return gson.toJson(dadataObjects);
-		else
-			return gson.toJson(yandexObjects);
+		yandexObjects = _geoYandex.getObjects(name);
+		return gson.toJson(yandexObjects);
 	}
 
 	@GET

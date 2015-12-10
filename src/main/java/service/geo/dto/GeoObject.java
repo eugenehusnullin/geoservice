@@ -12,6 +12,7 @@ public class GeoObject {
     String street;
     String house;
     Integer precision;
+    String kind;
 
     public GeoObject(){}
 
@@ -100,4 +101,12 @@ public class GeoObject {
     public void setPrecision(Integer precision) {
         this.precision = precision;
     }
+
+	public String getKind() {
+		return kind;
+	}
+
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
 }

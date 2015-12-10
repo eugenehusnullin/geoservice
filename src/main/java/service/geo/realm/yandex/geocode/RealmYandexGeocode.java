@@ -35,6 +35,8 @@ public class RealmYandexGeocode {
                                     featureMember.getGeoObject().getName(),
                                     featureMember.getGeoObject().getDescription());
                             RealmYandexAddressDetails address = featureMember.getGeoObject().getMetaDataProperty().getGeocoderMetaData().getAddressDetails();
+                            
+                            object.setKind(featureMember.getGeoObject().getMetaDataProperty().getGeocoderMetaData().getKind());
 
                             object.setPrecision( Conf.YANDEX_DADATA_PERCISION.get(featureMember.getGeoObject().getMetaDataProperty().getGeocoderMetaData().getPrecision()) );
 
