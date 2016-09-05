@@ -26,7 +26,6 @@ import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 import retrofit.converter.GsonConverter;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class DaDataService implements SuggestionProvider, GeoProvider {
 
@@ -200,16 +199,16 @@ public class DaDataService implements SuggestionProvider, GeoProvider {
 
     @Override
     public List<GeoObject> getObjects(float lat, float lng) {
-        throw new NotImplementedException();
+    	return null;
     }
 
     @Override
     public List<GeoRoute> getRoute(float latOrigin, float lngOrigin, float latDest, float lngDest) {
-        throw new NotImplementedException();
+    	return null;
     }
 
     @Override
     public String getLocationMeta(float lat, float lng, String locationType) {
-        throw new NotImplementedException();
+        return null;
     }
 }

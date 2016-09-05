@@ -12,7 +12,6 @@ import service.geo.dto.GeoRoute;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.converter.GsonConverter;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -127,6 +126,6 @@ public class GoogleMapsService implements GeoProvider {
 
     @Override
     public String getLocationMeta(float lat, float lng, String locationType) {
-        throw new NotImplementedException();
+    	return null;
     }
 }
