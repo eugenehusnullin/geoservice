@@ -10,3 +10,4 @@ src/main/resources/log4j2.xml
 src/main/resources/tb/apitaxirf/*
 src/main/java/service/Conf.java
 /bin/
+/.gradle/
